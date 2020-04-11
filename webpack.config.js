@@ -13,6 +13,16 @@ const VENDOR_LIBS = [
   "redux-thunk",
   "redux",
 ];
+const devServer = {
+  port: 4000,
+  open: true,
+  disableHostCheck: true,
+  historyApiFallback: true,
+  overlay: true,
+  inline: true,
+  compress: true,
+  contentBase: "/",
+};
 
 module.exports = {
   entry: {
@@ -54,6 +64,7 @@ module.exports = {
       template: "src/index.html",
     }),
   ],
+  devServer,
   optimization: {
     splitChunks: {
       cacheGroups: {
