@@ -34,11 +34,25 @@ module.exports = {
     filename: "[name].[chunkhash].js",
   },
   mode: "development",
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],
+  },
   module: {
+    // loaders: [
+    //   {
+    //     loader: "babel-loader",
+    //     query: {
+    //       presets: ["@babel/preset-react"],
+    //       // plugins: ["transform-class-properties"],
+    //     },
+    //     test: /\.jsx?$/,
+    //     exclude: "/node_modules",
+    //   },
+    // ],
     rules: [
       {
         use: "babel-loader",
-        test: /\.js$/,
+        test: /\.js$|jsx/,
         //   khong cho no tim trong day
         exclude: "/node_modules",
       },
